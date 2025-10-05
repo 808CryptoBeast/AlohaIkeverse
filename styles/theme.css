@@ -1,0 +1,46 @@
+/* ========== ALOHA IKEVERSE THEME SYSTEM ========== */
+.theme-transition {
+  transition: background-color 600ms ease, color 600ms ease, box-shadow 600ms ease;
+}
+
+[data-theme="worldcreate"] {
+  --ike-accent: #00f7ff;
+  --text-primary: #eaf6ff;
+  --text-secondary: #cfeefc;
+  --section-bg: linear-gradient(180deg, #001a33 0%, #003366 100%);
+}
+
+[data-theme="cosmic"] {
+  --ike-accent: #9c27b0;
+  --text-primary: #f5f3ff;
+  --text-secondary: #ddd6fe;
+  --section-bg: linear-gradient(180deg, #1e1b4b 0%, #3730a3 100%);
+}
+
+[data-theme="starry"] {
+  --ike-accent: #ff9800;
+  --text-primary: #fef3c7;
+  --text-secondary: #fde68a;
+  --section-bg: linear-gradient(180deg, #0c0a09 0%, #1c1917 100%);
+}
+
+/* Protocol-specific themes */
+[data-theme="bitcoin"] {
+  --ike-accent: #f7931a;
+  --ike-success: #ffd700;
+}
+
+[data-theme="xrpl"] {
+  --ike-accent: #25aae1;
+  --ike-success: #86efac;
+}
+
+[data-theme="ethereum"] {
+  --ike-accent: #8a92b2;
+  --ike-success: #67e8f9;
+}
+
+[data-theme="aloha"] {
+  --ike-accent: #ff6b6b;
+  --ike-success: #a29bfe;
+}
