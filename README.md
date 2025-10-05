@@ -3,46 +3,47 @@
 A comprehensive blockchain education platform built with modern web technologies, featuring an immersive learning experience with beautiful animations and responsive design.
 
 ## 🚀 Project Structure
+## 🚀 Project Structure
+
 aloha-ikeverse/
 ├── index.html # Main HTML file
 ├── styles/ # All CSS styles
-│ ├── main.css # Main import file
-│ ├── base.css # Base styles & variables
-│ ├── layout.css # Layout & containers
-│ ├── components/ # COMPONENTS FOLDER
-│ │ ├── navigation.css # Navigation component
-│ │ ├── buttons.css # Button components
-│ │ ├── cards.css # Card components
-│ │ ├── forms.css # Form components
-│ │ ├── footer.css # Footer component
-│ │ ├── team.css # Team components
-│ │ └── contact.css # Contact components
-│ ├── theme.css # Theme system
-│ ├── modules.css # Modules & learning paths
-│ ├── blockchain-history.css # Blockchain history styles
-│ └── sections/ # CONTENT SECTIONS ONLY
-│ ├── hero.css # Hero section
-│ └── introduction.css # Introduction section
+│   ├── main.css # Main import file
+│   ├── base.css # Base styles & variables
+│   ├── layout.css # Layout & containers
+│   ├── components/ # COMPONENTS FOLDER
+│   │   ├── navigation.css # Navigation component
+│   │   ├── buttons.css # Button components
+│   │   ├── cards.css # Card components
+│   │   ├── forms.css # Form components
+│   │   ├── footer.css # Footer component
+│   │   ├── team.css # Team components
+│   │   └── contact.css # Contact components
+│   ├── theme.css # Theme system
+│   ├── modules.css # Modules & learning paths
+│   ├── blockchain-history.css # Blockchain history styles
+│   └── sections/ # CONTENT SECTIONS ONLY
+│       ├── hero.css # Hero section
+│       └── introduction.css # Introduction section
 ├── scripts/ # JavaScript files
-│ ├── main.js # Main application logic
-│ ├── utils.js # Utility functions
-│ ├── theme.js # Theme switching
-│ ├── navigation.js # Navigation system
-│ └── progress.js # Progress tracking
+│   ├── main.js # Main application logic
+│   ├── utils.js # Utility functions
+│   ├── theme.js # Theme switching
+│   ├── navigation.js # Navigation system
+│   └── progress.js # Progress tracking
 ├── assets/ # Static assets
-│ ├── docs/ # Documentation
-│ ├── fonts/ # Custom fonts
-│ ├── icons/ # UI icons
-│ ├── images/ # Images and logos
-│ │ ├── btc.png # Bitcoin logo
-│ │ ├── eth.png # Ethereum logo
-│ │ └── xrp.svg # XRP logo
-│ └── vids/ # Background videos
-│ ├── worldcreate.mp4 # World Create theme
-│ ├── cosmic.mp4 # Cosmic theme
-│ └── starry.mp4 # Starry theme
-└── README.md # This file# This file
-
+│   ├── docs/ # Documentation
+│   ├── fonts/ # Custom fonts
+│   ├── icons/ # UI icons
+│   ├── images/ # Images and logos
+│   │   ├── btc.png # Bitcoin logo
+│   │   ├── eth.png # Ethereum logo
+│   │   └── xrp.svg # XRP logo
+│   └── vids/ # Background videos
+│       ├── worldcreate.mp4 # World Create theme
+│       ├── cosmic.mp4 # Cosmic theme
+│       └── starry.mp4 # Starry theme
+└── README.md # This file
 ## 🎨 Design System
 
 ### Color Palette
