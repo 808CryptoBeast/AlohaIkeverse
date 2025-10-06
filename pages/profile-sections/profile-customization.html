@@ -1,0 +1,84 @@
+<section class="customization-section" id="customization-panel" style="display: none;">
+    <div class="customization-header">
+        <h2>🛠️ Customize Your Profile</h2>
+        <p>Make your learning journey uniquely yours</p>
+    </div>
+    
+    <div class="customization-grid">
+        <!-- Avatar Customization -->
+        <div class="customization-card">
+            <h3>🖼️ Profile Avatar</h3>
+            <div class="avatar-options">
+                <div class="avatar-option selected" data-avatar="🧠">
+                    <div class="avatar-preview">🧠</div>
+                    <span>Thinker</span>
+                </div>
+                <div class="avatar-option" data-avatar="🛡️">
+                    <div class="avatar-preview">🛡️</div>
+                    <span>Protector</span>
+                </div>
+                <div class="avatar-option" data-avatar="🔍">
+                    <div class="avatar-preview">🔍</div>
+                    <span>Verifier</span>
+                </div>
+                <div class="avatar-option" data-avatar="💎">
+                    <div class="avatar-preview">💎</div>
+                    <span>Opportunist</span>
+                </div>
+                <div class="avatar-option" data-avatar="🌊">
+                    <div class="avatar-preview">🌊</div>
+                    <span>Aloha</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Color Theme -->
+        <div class="customization-card">
+            <h3>🎨 Color Theme</h3>
+            <div class="color-options">
+                <div class="color-option selected" data-theme="default">
+                    <div class="color-preview" style="background: linear-gradient(135deg, #00f7ff, #25aae1)"></div>
+                    <span>Ikeverse Blue</span>
+                </div>
+                <div class="color-option" data-theme="bitcoin">
+                    <div class="color-preview" style="background: linear-gradient(135deg, #f7931a, #ffab00)"></div>
+                    <span>Bitcoin Orange</span>
+                </div>
+                <div class="color-option" data-theme="ethereum">
+                    <div class="color-preview" style="background: linear-gradient(135deg, #8a92b2, #6366f1)"></div>
+                    <span>Ethereum Purple</span>
+                </div>
+                <div class="color-option" data-theme="compassion">
+                    <div class="color-preview" style="background: linear-gradient(135deg, #ff6b6b, #ff1744)"></div>
+                    <span>Compassion Red</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Username Customization -->
+        <div class="customization-card">
+            <h3>📛 Display Name</h3>
+            <div class="username-customization">
+                <input type="text" id="username-input" value="Critical_Thinker_0420" maxlength="20" class="username-field">
+                <p class="helper-text">Choose a name that reflects your learning journey (3-20 characters)</p>
+                <div class="username-suggestions">
+                    <span class="suggestion-tag" data-name="Web3_Verifier">Web3_Verifier</span>
+                    <span class="suggestion-tag" data-name="Crypto_Guardian">Crypto_Guardian</span>
+                    <span class="suggestion-tag" data-name="Aloha_Thinker">Aloha_Thinker</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bio Section -->
+        <div class="customization-card">
+            <h3>📝 Profile Bio</h3>
+            <textarea id="profile-bio" class="bio-field" placeholder="Share your learning goals or what brought you to Aloha Ikeverse..." maxlength="150">Building my critical thinking skills to navigate Web3 safely and spot real opportunities beyond the hype.</textarea>
+            <div class="bio-counter"><span id="bio-length">0</span>/150 characters</div>
+        </div>
+    </div>
+
+    <div class="customization-actions">
+        <button class="btn btn-ghost" id="cancel-customization">Cancel</button>
+        <button class="btn btn-primary" id="save-customization">Save Changes</button>
+    </div>
+</section>

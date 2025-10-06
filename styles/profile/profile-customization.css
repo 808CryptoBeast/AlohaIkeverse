@@ -1,0 +1,297 @@
+/* ========== PROFILE CUSTOMIZATION STYLES ========== */
+
+.customization-section {
+  background: var(--ike-card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--ike-glass);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.customization-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ike-accent), transparent);
+}
+
+.customization-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.customization-header h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--ike-accent), var(--ike-xrpl));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: var(--space-md);
+}
+
+.customization-header p {
+  color: var(--ike-muted);
+  font-size: 1.125rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.customization-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.customization-card {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid var(--ike-glass);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  transition: var(--transition);
+}
+
+.customization-card:hover {
+  border-color: var(--ike-accent);
+  transform: translateY(-2px);
+}
+
+.customization-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
+  color: var(--ike-text);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* Avatar Options */
+.avatar-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: var(--space-md);
+}
+
+.avatar-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
+  background: var(--ike-glass);
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.avatar-option:hover {
+  border-color: var(--ike-accent);
+  transform: scale(1.05);
+}
+
+.avatar-option.selected {
+  border-color: var(--ike-accent);
+  background: rgba(0, 247, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.avatar-preview {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--ike-accent), var(--ike-xrpl));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.avatar-option span {
+  font-size: 0.875rem;
+  color: var(--ike-text);
+  font-weight: 500;
+}
+
+/* Color Options */
+.color-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--space-md);
+}
+
+.color-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
+  background: var(--ike-glass);
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.color-option:hover {
+  border-color: var(--ike-accent);
+  transform: scale(1.05);
+}
+
+.color-option.selected {
+  border-color: var(--ike-accent);
+  background: rgba(0, 247, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.color-preview {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.color-option span {
+  font-size: 0.875rem;
+  color: var(--ike-text);
+  font-weight: 500;
+}
+
+/* Username Customization */
+.username-customization {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.username-field {
+  background: var(--ike-surface);
+  border: 1px solid var(--ike-glass);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  color: var(--ike-text);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.username-field:focus {
+  outline: none;
+  border-color: var(--ike-accent);
+  box-shadow: 0 0 0 2px rgba(0, 247, 255, 0.2);
+}
+
+.helper-text {
+  color: var(--ike-muted);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.username-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.suggestion-tag {
+  background: var(--ike-glass);
+  border: 1px solid var(--ike-glass);
+  border-radius: var(--radius-sm);
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 0.875rem;
+  color: var(--ike-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.suggestion-tag:hover {
+  background: var(--ike-accent);
+  color: var(--ike-bg);
+  transform: translateY(-1px);
+}
+
+/* Bio Section */
+.bio-field {
+  background: var(--ike-surface);
+  border: 1px solid var(--ike-glass);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  color: var(--ike-text);
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 100px;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.bio-field:focus {
+  outline: none;
+  border-color: var(--ike-accent);
+  box-shadow: 0 0 0 2px rgba(0, 247, 255, 0.2);
+}
+
+.bio-counter {
+  text-align: right;
+  color: var(--ike-muted);
+  font-size: 0.875rem;
+  margin-top: var(--space-xs);
+}
+
+/* Customization Actions */
+.customization-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-md);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--ike-glass);
+}
+
+/* Responsive customization */
+@media (max-width: 768px) {
+  .customization-section {
+    padding: var(--space-xl);
+  }
+  
+  .customization-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .avatar-options {
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  }
+  
+  .color-options {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  
+  .customization-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .customization-section {
+    padding: var(--space-lg);
+  }
+  
+  .customization-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .avatar-options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .color-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

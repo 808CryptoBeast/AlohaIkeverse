@@ -1,0 +1,221 @@
+/* ========== LEARNING STATS STYLES ========== */
+
+.learning-stats-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.stat-card {
+  background: var(--ike-card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--ike-glass);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ike-accent), transparent);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 247, 255, 0.3);
+  box-shadow: var(--shadow-xl);
+}
+
+.stat-icon {
+  font-size: 3rem;
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--ike-accent), var(--ike-xrpl));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.stat-icon::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, var(--ike-accent), var(--ike-xrpl));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.6;
+  filter: blur(8px);
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--ike-text), var(--ike-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.stat-label {
+  color: var(--ike-muted);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-trend {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
+.stat-trend.positive {
+  background: rgba(0, 200, 83, 0.15);
+  color: var(--ike-success);
+  border: 1px solid rgba(0, 200, 83, 0.3);
+}
+
+.stat-trend.negative {
+  background: rgba(255, 23, 68, 0.15);
+  color: var(--ike-error);
+  border: 1px solid rgba(255, 23, 68, 0.3);
+}
+
+.stat-progress {
+  margin-top: var(--space-sm);
+}
+
+.streak-days {
+  display: flex;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+}
+
+.day {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--ike-glass);
+  color: var(--ike-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+.day.active {
+  background: linear-gradient(135deg, var(--ike-warning), #ff6b00);
+  color: var(--ike-bg);
+  border-color: var(--ike-warning);
+}
+
+.day.current {
+  background: linear-gradient(135deg, var(--ike-accent), var(--ike-xrpl));
+  color: var(--ike-bg);
+  border-color: var(--ike-accent);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.stat-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+}
+
+.stat-breakdown span {
+  font-size: 0.875rem;
+  color: var(--ike-muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-breakdown span::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+  margin: 0 var(--space-sm);
+  transform: translateY(-4px);
+}
+
+/* Responsive stats */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-card {
+    padding: var(--space-lg);
+  }
+  
+  .stat-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-card {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-md);
+  }
+  
+  .streak-days {
+    justify-content: center;
+  }
+  
+  .day {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+  }
+}

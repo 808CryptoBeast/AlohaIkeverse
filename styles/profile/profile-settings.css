@@ -1,0 +1,232 @@
+/* ========== PROFILE SETTINGS STYLES ========== */
+
+.profile-settings-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-xl);
+}
+
+.settings-card {
+  background: var(--ike-card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--ike-glass);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.settings-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ike-accent), transparent);
+}
+
+.settings-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
+  color: var(--ike-text);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* Toggle Switch */
+.setting-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--ike-glass);
+}
+
+.setting-option:last-child {
+  border-bottom: none;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  cursor: pointer;
+  flex: 1;
+  font-weight: 500;
+  color: var(--ike-text);
+}
+
+.toggle-label input {
+  display: none;
+}
+
+.toggle-slider {
+  width: 50px;
+  height: 26px;
+  background: var(--ike-glass);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  position: relative;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--ike-muted);
+  top: 2px;
+  left: 2px;
+  transition: var(--transition);
+}
+
+.toggle-label input:checked + .toggle-slider {
+  background: linear-gradient(135deg, var(--ike-accent), var(--ike-xrpl));
+  border-color: var(--ike-accent);
+}
+
+.toggle-label input:checked + .toggle-slider::before {
+  transform: translateX(24px);
+  background: var(--ike-bg);
+}
+
+/* Goal Settings */
+.goal-setting {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.goal-setting:last-child {
+  margin-bottom: 0;
+}
+
+.goal-setting label {
+  font-weight: 500;
+  color: var(--ike-text);
+  margin-bottom: var(--space-xs);
+}
+
+.goal-select {
+  background: var(--ike-surface);
+  border: 1px solid var(--ike-glass);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  color: var(--ike-text);
+  font-size: 1rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.goal-select:focus {
+  outline: none;
+  border-color: var(--ike-accent);
+  box-shadow: 0 0 0 2px rgba(0, 247, 255, 0.2);
+}
+
+.goal-select:hover {
+  border-color: var(--ike-accent);
+}
+
+/* Text Buttons */
+.btn-text {
+  background: none;
+  border: none;
+  color: var(--ike-text);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--ike-glass);
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: left;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.btn-text:last-child {
+  border-bottom: none;
+}
+
+.btn-text:hover {
+  color: var(--ike-accent);
+  transform: translateX(4px);
+}
+
+.btn-text.danger {
+  color: var(--ike-error);
+}
+
+.btn-text.danger:hover {
+  color: #ff5252;
+  background: rgba(255, 23, 68, 0.1);
+}
+
+/* Settings card hover effects */
+.settings-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 247, 255, 0.3);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Responsive settings */
+@media (max-width: 1024px) {
+  .settings-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .settings-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .settings-card {
+    padding: var(--space-lg);
+  }
+  
+  .setting-option {
+    padding: var(--space-sm) 0;
+  }
+  
+  .toggle-label {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-card {
+    padding: var(--space-md);
+  }
+  
+  .settings-card h3 {
+    font-size: 1.125rem;
+  }
+  
+  .toggle-slider {
+    width: 44px;
+    height: 24px;
+  }
+  
+  .toggle-slider::before {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .toggle-label input:checked + .toggle-slider::before {
+    transform: translateX(20px);
+  }
+}

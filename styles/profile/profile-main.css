@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+/* ========== TEMPORARY CSS VARIABLES ========== */
+:root {
+  /* Aloha Ikeverse Color System */
+  --ike-bg: #0f172a;
+  --ike-surface: #161b22;
+  --ike-text: #f1f5f9;
+  --ike-muted: #94a3b8;
+  --ike-accent: #00f7ff;
+  --ike-success: #00c853;
+  --ike-warning: #ffab00;
+  --ike-error: #ff1744;
+  --ike-card-bg: rgba(30, 41, 59, 0.5);
+  --ike-glass: rgba(30, 41, 59, 0.3);
+  
+  /* Protocol-specific colors */
+  --ike-bitcoin: #f7931a;
+  --ike-xrpl: #25aae1;
+  --ike-ethereum: #8a92b2;
+  --ike-compassion: #ff6b6b;
+  
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  
+  /* Transitions */
+  --transition: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== PROFILE MAIN LAYOUT & OVERRIDES ========== */
+.profile-page {
+  background: var(--ike-bg);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ========== PROFILE MAIN LAYOUT & OVERRIDES ========== */
+
+.profile-page {
+  background: var(--ike-bg);
+  min-height: 100vh;
+  position: relative;
+}
+
+.profile-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--ike-bg) 0%, var(--ike-surface) 100%);
+  z-index: -2;
+}
+
+.profile-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+  position: relative;
+  z-index: 1;
+}
+
+/* Profile-specific container overrides */
+.profile-page .container {
+  max-width: 100%;
+  padding: 0;
+}
+
+/* Profile-specific section spacing */
+.profile-page .section-spacing {
+  margin: var(--space-2xl) 0;
+  padding: var(--space-xl) 0;
+}
+
+.profile-page .section-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.profile-page .section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--ike-accent), var(--ike-xrpl));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: var(--space-md);
+}
+
+.profile-page .section-header p {
+  font-size: 1.25rem;
+  color: var(--ike-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Profile-specific card styles */
+.profile-page .card {
+  background: var(--ike-card-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--ike-glass);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  transition: var(--transition);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-page .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ike-accent), transparent);
+}
+
+.profile-page .card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(0, 247, 255, 0.3);
+}
+
+/* Profile-specific grid overrides */
+.profile-page .cols-2 {
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: var(--space-xl);
+}
+
+.profile-page .cols-3 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+/* Profile-specific button overrides */
+.profile-page .btn {
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.profile-page .btn-primary {
+  background: linear-gradient(135deg, var(--ike-accent), var(--ike-xrpl));
+  color: var(--ike-bg);
+  padding: var(--space-md) var(--space-lg);
+  font-weight: 700;
+}
+
+.profile-page .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 247, 255, 0.4);
+}
+
+.profile-page .btn-ghost {
+  background: transparent;
+  color: var(--ike-text);
+  border: 1px solid var(--ike-glass);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.profile-page .btn-ghost:hover {
+  background: var(--ike-glass);
+  border-color: var(--ike-accent);
+  transform: translateY(-2px);
+}
+
+.profile-page .btn-large {
+  padding: var(--space-lg) var(--space-xl);
+  font-size: 1.125rem;
+}
+
+.profile-page .btn-small {
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.875rem;
+}
+
+/* Profile-specific progress bars */
+.profile-page .progress-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.profile-page .progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ike-accent), var(--ike-xrpl));
+  border-radius: var(--radius-lg);
+  transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.profile-page .progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Profile-specific badges */
+.profile-page .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--ike-glass);
+  color: var(--ike-text);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.profile-page .badge.skeptic {
+  background: rgba(0, 247, 255, 0.15);
+  border-color: var(--ike-accent);
+  color: var(--ike-accent);
+}
+
+.profile-page .badge.streak {
+  background: rgba(255, 171, 0, 0.15);
+  border-color: var(--ike-warning);
+  color: var(--ike-warning);
+}
+
+.profile-page .badge.verifier {
+  background: rgba(0, 200, 83, 0.15);
+  border-color: var(--ike-success);
+  color: var(--ike-success);
+}
+
+/* Responsive design for profile */
+@media (max-width: 1024px) {
+  .profile-page .cols-2 {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+  
+  .profile-page .cols-3 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .profile-page .section-header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    padding: var(--space-md);
+  }
+  
+  .profile-page .cols-2,
+  .profile-page .cols-3 {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
+  .profile-page .section-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .profile-page .section-header p {
+    font-size: 1.125rem;
+  }
+  
+  .profile-page .card {
+    padding: var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    padding: var(--space-sm);
+  }
+  
+  .profile-page .section-spacing {
+    margin: var(--space-xl) 0;
+    padding: var(--space-lg) 0;
+  }
+}
+
+/* ========== DEBUG STYLES - ADD TO BOTTOM OF FILE ========== */
+#navigation-container,
+#profile-header-container,
+#customization-container,
+#learning-stats-container,
+#skills-progress-container,
+#journey-timeline-container,
+#profile-settings-container {
+  border: 3px solid #00f7ff !important;
+  background: rgba(0, 247, 255, 0.1) !important;
+  min-height: 100px;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+}
+
+/* Add labels to each section */
+#navigation-container::before {
+  content: "NAVIGATION";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: #00f7ff;
+  color: #0f172a;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#profile-header-container::before {
+  content: "PROFILE HEADER";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: #00f7ff;
+  color: #0f172a;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#customization-container::before {
+  content: "CUSTOMIZATION";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: #00f7ff;
+  color: #0f172a;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#learning-stats-container::before {
+  content: "LEARNING STATS";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: #00f7ff;
+  color: #0f172a;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#skills-progress-container::before {
+  content: "SKILLS PROGRESS";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: #00f7ff;
+  color: #0f172a;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#journey-timeline-container::before {
+  content: "JOURNEY TIMELINE";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: #00f7ff;
+  color: #0f172a;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#profile-settings-container::before {
+  content: "PROFILE SETTINGS";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: #00f7ff;
+  color: #0f172a;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Make sure text is visible */
+.profile-page {
+  color: #f1f5f9 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.profile-page * {
+  color: inherit !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Basic text styles for visibility */
+h1, h2, h3, h4, h5, h6 {
+  color: #f1f5f9 !important;
+  margin: 10px 0 !important;
+}
+
+p, span, div {
+  color: #94a3b8 !important;
+}
+
+/* Make buttons visible */
+.btn {
+  display: inline-block !important;
+  padding: 10px 20px !important;
+  margin: 5px !important;
+  border: 1px solid #00f7ff !important;
+  background: rgba(0, 247, 255, 0.2) !important;
+  color: #00f7ff !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
